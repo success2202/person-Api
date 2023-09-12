@@ -19,13 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         echo json_encode($persons);
     } else {
-        $sql = "SELECT * FROM users";
-        $result = $conn->query($sql);
-        $persons = [];
-        while ($row = $result->fetch_assoc()) {
-            $persons[] = $row;
-        }
-        echo json_encode($persons, JSON_PRETTY_PRINT);
+        echo json_encode(['message' => 'insert a name to fetch']);
     }
     // Post method to Insert data into the database
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
